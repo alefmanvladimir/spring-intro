@@ -23,10 +23,6 @@ public class Sender {
 
     @PostConstruct
     void init(){
-        int size = listServices.size();
-        for(int i=0; i<size; i++){
-            services.put(listServices.get(i).getType(), listServices.get(i));
-        }
-
+        listServices.stream().forEach(i->services.put(i.getType(), i));
     }
 }
